@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\DiseñiResource\Pages;
 use App\Filament\Resources\DiseñiResource\RelationManagers;
+use App\Models\Design;
 use App\Models\Diseñi;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -15,7 +16,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class DiseñiResource extends Resource
 {
-    protected static ?string $model = Diseñi::class;
+    protected static ?string $model = Design::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
