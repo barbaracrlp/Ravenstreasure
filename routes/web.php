@@ -16,6 +16,10 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CartItemController;
 
 Route::get('/', function () {
+    return view('portada');
+});
+
+Route::get('/home', function () {
     return view('app');
 })->name('home');
 

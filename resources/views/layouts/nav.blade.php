@@ -1,8 +1,11 @@
-<nav>
-    <ul>
-        <li><a href="{{ route('home') }}">Home</a></li>
-        <li><a href="{{ route('designs.index') }}">Designs</a></li>
 
-        <!-- Add more navigation links as needed -->
-    </ul>
-</nav>
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src='{{asset('images/iconoRaven.png')}}'alt="" width="30" height="24" class="d-inline-block align-text-top">
+        Raven's Treasure
+      </a>
+      <a  class="navbar-brand" href="{{ route('home') }}">Home</a>
+      <a class="navbar-brand"  href="{{ route('designs.index') }}">Designs</a>
+    </div>
+  </nav>
