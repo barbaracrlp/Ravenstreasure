@@ -19,11 +19,12 @@
                 <h1>Raven's Treasure</h1>
             </div>
         </div>
+        @include('layouts.nav')
     </header>
 
     <nav>
         <div class="container">
-            @include('layouts.nav')
+
                 <div class="nav-icons">
                     <li>@livewire('cart-dropdown')</li>
                     <li>
