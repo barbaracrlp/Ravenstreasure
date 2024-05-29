@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\CollectionResource\Pages;
-use App\Filament\Resources\CollectionResource\RelationManagers;
-use App\Models\Collection;
+use App\Filament\Resources\BrandResource\Pages;
+use App\Filament\Resources\BrandResource\RelationManagers;
+use App\Models\Brand;
 use Filament\Forms;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Textarea;
@@ -18,12 +18,12 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Facades\Auth;
 
-class CollectionResource extends Resource
+class BrandResource extends Resource
 {
-    protected static ?string $model = Collection::class;
+    protected static ?string $model = Brand::class;
 
-    protected static ?string $navigationIcon = 'heroicon-s-circle-stack';
-    protected static ?string $navigationLabel = 'Collection';
+    protected static ?string $navigationIcon = 'heroicon-o-identification';
+    protected static ?string $navigationLabel = 'Your Brand';
 
     public static function form(Form $form): Form
     {
@@ -32,10 +32,7 @@ class CollectionResource extends Resource
                 //
                 TextInput::make('name'),
                 Textarea::make('description'),
-                TextInput::make('price')
-                ->numeric(),
                 Hidden::make('user_id')->default(Auth::id()),
-
             ]);
     }
 
@@ -44,12 +41,8 @@ class CollectionResource extends Resource
         return $table
             ->columns([
                 //
-                TextColumn::make('name')
-                ->sortable()
-                ->searchable(),
+                TextColumn::make('name'),
                 TextColumn::make('description'),
-                TextColumn::make('price')->money('EUR')->sortable(),
-
             ])
             ->filters([
                 //
@@ -74,9 +67,9 @@ class CollectionResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListCollections::route('/'),
-            'create' => Pages\CreateCollection::route('/create'),
-            'edit' => Pages\EditCollection::route('/{record}/edit'),
+            'index' => Pages\ListBrands::route('/'),
+            'create' => Pages\CreateBrand::route('/create'),
+            'edit' => Pages\EditBrand::route('/{record}/edit'),
         ];
     }
 }
