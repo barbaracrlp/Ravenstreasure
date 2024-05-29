@@ -37,63 +37,58 @@ class Register extends BaseRegister
 
 
     protected function getSurNameFormComponent(): Component
-{
-    return TextInput::make('surname1')
-        ->label('Surname')
-        ->required()
-        ->maxLength(255)
-        ->autofocus();
+    {
+        return TextInput::make('surname1')
+            ->label('Surname')
+            ->required()
+            ->maxLength(255)
+            ->autofocus();
+    }
+
+
+
+
+    protected function getLoginFormComponent(): Component
+    {
+        return Toggle::make('log_in')
+            ->label('Login')
+            ->hidden()
+            ->autofocus();
+    }
+
+    protected function getUserNameFormComponent(): Component
+    {
+        return TextInput::make('username')
+            ->label('Username')
+            ->required()
+            ->maxLength(255)
+            ->autofocus();
+    }
+
+    protected function getSurName2FormComponent(): Component
+    {
+        return TextInput::make('surname2')
+            ->label('Second Surname')
+            ->required()
+            ->maxLength(255)
+            ->autofocus();
+    }
+
+
+    protected function getPhoneFormComponent(): Component
+    {
+        return TextInput::make('phone')
+            ->label('Phone')
+            ->tel()
+            ->required()
+            ->maxLength(255)
+            ->autofocus();
+    }
+
+    protected function getDesignerFormComponent(): Component
+    {
+        return Toggle::make('is_designer')
+            ->label('Are you designer?')
+            ->autofocus();
+    }
 }
-
-
-
-
-protected function getLoginFormComponent(): Component
-{
-    return Toggle::make('log_in')
-        ->label('Login')
-
-
-        ->autofocus();
-}
-
-protected function getUserNameFormComponent(): Component
-{
-    return TextInput::make('username')
-        ->label('Username')
-        ->required()
-        ->maxLength(255)
-        ->autofocus();
-}
-
-protected function getSurName2FormComponent(): Component
-{
-    return TextInput::make('surname2')
-        ->label('Second Surname')
-        ->required()
-        ->maxLength(255)
-        ->autofocus();
-}
-
-
-protected function getPhoneFormComponent(): Component
-{
-    return TextInput::make('phone')
-        ->label('Phone')
-        ->tel()
-        ->required()
-        ->maxLength(255)
-        ->autofocus();
-}
-
-protected function getDesignerFormComponent(): Component
-{
-    return Toggle::make('is_designer')
-        ->label('Are you designer?')
-
-        ->autofocus();
-}
-
-}
-
-
