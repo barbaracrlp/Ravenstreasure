@@ -7,6 +7,7 @@ use App\Filament\Resources\DiseñiResource\RelationManagers;
 use App\Models\Design;
 use App\Models\Diseñi;
 use Filament\Forms;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -26,6 +27,8 @@ class DiseñiResource extends Resource
         return $form
             ->schema([
                 //
+                TextInput::make('nombre'),
+
             ]);
     }
 

@@ -13,6 +13,9 @@ class Collection extends Model
 
     protected $fillable=[
         'name',
+        'description',
+        'designer_id',
+        'price',
     ];
 
     public function design():HasMany
@@ -23,4 +26,9 @@ class Collection extends Model
     public function designer():BelongsTo{
         return $this->belongsTo(Designer::class);
     }
+
+    // public function setDesignerIdAttribute()
+    // {
+    //     $this->attributes['designer_id'] = Auth::id();
+    // }
 }
