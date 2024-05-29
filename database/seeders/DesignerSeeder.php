@@ -16,11 +16,11 @@ class DesignerSeeder extends Seeder
     {
         //
 
-        DB::table('designers')->insert([
-            'user_id' => 1,
-            'nameBrand' => 'admin2',
-            'payment_id' => 1,
+        // DB::table('designers')->insert([
+        //     'user_id' => 1,
+        //     'nameBrand' => 'admin2',
+        //     'payment_id' => 1,
 
-        ]);
+        // ]);
     }
 }

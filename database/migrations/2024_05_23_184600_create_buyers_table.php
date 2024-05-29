@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('buyers', function (Blueprint $table) {
-            $table->foreignId('user_id')->primary(); // Define 'user_id' as the primary key
-            $table->string('address');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); // Define the foreign key constraint
-            $table->foreignId('payment_id')->nullable()->constrained('payments')->onDelete('set null');
-        });
+        // Schema::create('buyers', function (Blueprint $table) {
+        //     $table->foreignId('user_id')->primary(); // Define 'user_id' as the primary key
+        //     $table->string('address');
+        //     $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); // Define the foreign key constraint
+        //     $table->foreignId('payment_id')->nullable()->constrained('payments')->onDelete('set null');
+        // });
     }
 
     /**

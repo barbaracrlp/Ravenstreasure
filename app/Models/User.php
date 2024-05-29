@@ -65,9 +65,12 @@ class User extends Authenticatable implements FilamentUser
         */
     }
 
-    public function designer():HasOne{
-        return $this->hasOne(Designer::class,'user_id');
-    }
+    // public function designer():HasOne{
+    //     return $this->hasOne(Designer::class,'user_id');
+    // }
 
+    public function brand():HasOne{
+        return $this->hasOne(Brand::class);
+    }
 
 }

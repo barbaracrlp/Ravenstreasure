@@ -16,8 +16,8 @@ return new class extends Migration
             // $table->foreignId('user_id')->constrained('designers')->onDelete('cascade');
             // $table->foreign('designer_id')->constrained('designers')->onDelete('cascade');
             // $table->foreign('designer_user_id')->constrained('designers')->onDelete('cascade');
-            $table->unsignedBigInteger('designer_id'); // Define the column that references 'user_id' in 'designers'
-            $table->foreign('designer_id')->references('user_id')->on('designers')->onDelete('cascade'); // Define the foreign key constraint
+
+            $table->foreignId('brand_id')->nullable()->constrained('brands')->onDelete('cascade');
             $table->timestamps();
             $table->string('name');
             $table->string('description');
