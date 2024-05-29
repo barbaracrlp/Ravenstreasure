@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('phone');
-            $table->boolean('log_in');
+            // $table->boolean('log_in');
             $table->boolean('is_designer')->default(false);
 
             $table->timestamps();

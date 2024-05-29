@@ -7,6 +7,7 @@ namespace App\Models;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -25,7 +26,7 @@ class User extends Authenticatable implements FilamentUser
         'surname2',
         'username',
         'phone',
-        'log_in',
+        // 'log_in',
         'is_designer',
         'email',
         'password',
@@ -62,6 +63,10 @@ class User extends Authenticatable implements FilamentUser
         /**tengo que ver como puedo hacer el register
          * revisar que en el controlador de laravel no se puedan crear
         */
+    }
+
+    public function designer():HasOne{
+        return $this->hasOne(Designer::class,'user_id');
     }
 
 

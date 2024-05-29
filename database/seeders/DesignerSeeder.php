@@ -17,7 +17,7 @@ class DesignerSeeder extends Seeder
         //
 
         DB::table('designers')->insert([
-            'user_id' => 2,
+            'user_id' => 1,
             'nameBrand' => 'admin2',
             'payment_id' => 1,
 
