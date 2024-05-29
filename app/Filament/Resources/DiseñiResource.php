@@ -18,7 +18,8 @@ class DiseñiResource extends Resource
 {
     protected static ?string $model = Design::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-s-paint-brush';
+    protected static ?string $navigationLabel = 'Designs';
 
     public static function form(Form $form): Form
     {
