@@ -17,11 +17,10 @@ return new class extends Migration
             // $table->foreign('designer_id')->constrained('designers')->onDelete('cascade');
             // $table->foreign('designer_user_id')->constrained('designers')->onDelete('cascade');
 
-            $table->foreignId('brand_id')->nullable()->constrained('brands')->onDelete('cascade');
+            $table->foreignId('user_id')->nullable()->constrained('users')->onDelete('cascade');
             $table->timestamps();
             $table->string('name');
             $table->string('description');
-            $table->decimal('price',8,2);
         });
     }
 

@@ -32,8 +32,6 @@ class CollectionResource extends Resource
                 //
                 TextInput::make('name'),
                 Textarea::make('description'),
-                TextInput::make('price')
-                ->numeric(),
                 Hidden::make('user_id')->default(Auth::id()),
 
             ]);

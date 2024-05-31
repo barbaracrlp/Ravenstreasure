@@ -20,7 +20,7 @@ class DesignController extends Controller
     public function create()
     {
         //
-        return view('designs.create');
+        // return view('designs.create');
     }
 
     public function store(Request $request)

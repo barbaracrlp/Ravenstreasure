@@ -15,7 +15,7 @@ class PaymentSeeder extends Seeder
     {
         //
         DB::table('payments')->insert([
-           'name'=>'Pago1',
+           'name'=>'Credit Card',
 
         ]);
     }
