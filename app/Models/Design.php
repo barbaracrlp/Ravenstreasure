@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Support\Facades\Storage;
@@ -27,13 +28,13 @@ class Design extends Model
 
     //a partir de aqui creo las relaciones
 
-    public function designer():BelongsTo{
-        return $this->belongsTo(Brand::class);
+    public function user():BelongsTo{
+        return $this->belongsTo(User::class,'user_id');
     }
 
     //falta el modelo
-    public function type():HasOne{
-        return $this->hasOne(Type::class);
+    public function type():BelongsTo{
+        return $this->belongsTo(Type::class);
     }
 
     public function collection():BelongsTo
@@ -41,22 +42,9 @@ class Design extends Model
         return $this->belongsTo(Collection::class);
     }
 
-    public function categories()
+    public function categories():BelongsToMany
     {
         return $this->belongsToMany(Category::class,);
     }
-
-
-    public function getFullFilePathAttribute()
-    {
-        // Obtener el file_path almacenado en la base de datos
-        $filePath = $this->attributes['file_path'];
-
-        // Concatenar el prefijo /storage/app/public
-        return Storage::url($filePath);
-    }
-
-
-
 
 }

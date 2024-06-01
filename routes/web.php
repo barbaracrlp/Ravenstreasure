@@ -30,7 +30,10 @@ Route::get('/designs', 'DesignController@index')->name('designs.index');
 
 Route::resource('designers', DesignerController::class);
 Route::resource('collections', CollectionController::class);
+
 Route::resource('designs', DesignController::class);
+
+
 Route::resource('categories', CategoryController::class);
 Route::resource('types', TypeController::class);
 

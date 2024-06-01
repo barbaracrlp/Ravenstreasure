@@ -28,7 +28,7 @@ class CartDropdown extends Component
     {
         //aqui cambio de user_id a buyer_id si veo que falla tengo que cambiarlo
         if (Auth::check()) {
-            $this->cart = Cart::where('buyer_id', Auth::id())->with('cartItems.design')->first();
+            $this->cart = Cart::where('user_id', Auth::id())->with('cartItems.design')->first();
         } else {
             $this->cart = null;
         }

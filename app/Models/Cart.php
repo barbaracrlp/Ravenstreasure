@@ -23,9 +23,9 @@ class Cart extends Model
     }
 
 
-    public function buyer():BelongsTo
+    public function user():BelongsTo
     {
-        return $this->belongsTo(Buyer::class);
+        return $this->belongsTo(User::class);
 
     }
 }

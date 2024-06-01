@@ -18,6 +18,8 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -76,6 +78,14 @@ class DiseñiResource extends Resource
         return $table
             ->columns([
                 //
+                TextColumn::make('name'),
+                TextColumn::make('price')->money('EUR'),
+                TextColumn::make('file_path'),
+                ImageColumn::make('file_path'),
+                TextColumn::make('expiration')->date(),
+                TextColumn::make('type.name')->label('Type'),
+                TextColumn::make('collection.name')->label('collection'),
+                TextColumn::make('categories.name')->label('Category'),
             ])
             ->filters([
                 //

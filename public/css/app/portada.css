@@ -4,7 +4,7 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    color: #fff;
+    /* color: #fff; */
     background-color:rgb(12, 11, 11);
 }
 
@@ -155,6 +155,46 @@ font-style: italic;
 font-family: "Poppins", sans-serif;
 font-weight: 900;
 font-style: italic;
+}
+
+.product-details {
+    padding: 20px;
+    background-color: #fff;
+    color: #000;
+    border-top: 1px solid #000;
+}
+
+.product-details h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.product-details .price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.product-details .stock,
+.product-details .expiration {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #666;
+}
+
+.product-details .btn {
+    margin-top: 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+}
+
+.product-image img {
+    max-height: 400px;
+    width: auto;
+    object-fit: cover;
 }
 
 

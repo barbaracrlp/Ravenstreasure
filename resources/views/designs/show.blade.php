@@ -1,18 +1,26 @@
 @extends('template')
 
 @section('content')
-    <div class="container">
-        <h1>{{ $design->name }}</h1>
-        <div class="card" style="width: 18rem;">
-            <img src="{{ $design->full_file_path }}"  class="card-img-top" alt="{{ $design->name }}">
-            <div class="card-body">
-                <h5 class="card-title">{{ $design->name }}</h5>
-                {{-- <p class="card-text">{{ $design->description }}</p> --}}
-                <p class="card-text">{{ $design->price }} €</p>
-                <p class="card-text">Stock: {{ $design->stock }}</p>
-                <p class="card-text">Expires on: {{ $design->expiration }}</p>
-                <a href="{{ route('designs.index') }}" class="btn btn-primary">Back to Designs</a>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <!-- Product Image -->
+                <div class="product-image text-center mb-4">
+                    <img src="{{ Storage::url($design->file_path) }}" class="card-img-top" alt="{{ $design->name }}">
+                </div>
+                <!-- Product Details -->
+                <div class="product-details" style="padding: 20px; background-color: #fff; color: #000; border-top: 1px solid #000;">
+                    <h1 class="mb-4">{{ $design->name }}</h1>
+                    <p class="price" style="font-size: 24px; font-weight: bold;">{{ $design->price }} €</p>
+                    <p class="stock" style="margin-top: 10px;">Stock: {{ $design->stock }}</p>
+                    <p class="expiration" style="margin-top: 10px;">Expires on: {{ $design->expiration }}</p>
+                    <a href="{{ route('designs.index') }}" class="btn btn-dark mt-4">Back to Designs</a>
+                </div>
             </div>
         </div>
     </div>
 @endsection
+
+
+
+
